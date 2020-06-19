@@ -1,0 +1,56 @@
+<%- include("partials/header")%>
+<style>
+	body{
+		background-color: rgb(15,15,15);
+	}
+	h1{
+		color: rgb(250,250,250);
+		text-align: center;
+		text-transform: uppercase;
+		text-decoration-line: underline;
+	}
+	#box{
+		color: rgb(250,250,250);
+		box-sizing: border-box;
+		border-width: 10px 2px 0 ;
+		border-style:solid;
+		border-color: rgb(240,240,240);
+		width: 60%;
+		margin: 15px auto;
+		line-height: 2;
+		font-size: 20px;
+		padding-left:2px;
+		font-weight: normal;
+		
+	}	
+	.bottom{
+		background-color: black;
+		color: red;
+		padding: 30px;
+		font-size: 25px;
+	}
+	.item{
+		border-bottom:2px solid rgb(240,240,240);
+	}
+</style>
+<% var x=0; %>
+<h1>Customer Details</h1>
+<div class="ui container">
+	<div class="ui list">
+<% customers.forEach(function(customer){ %>
+		<div id="box">
+		<div class="item">FirstName:<%= customer.fname %></div>
+<div class="item">LastName:<%= customer.lname %></div>
+<div class="item">DOB:<%= customer.dob%></div>
+	<div class="item">Phone.No:<%= customer.phone%></div>
+	<div class="item">Address:<%= customer.address%></div>
+	<div class="item">Favorite Bike:<%= customer.favbike%></div>
+		</div>
+<% x++ %>
+<% }) %>
+</div>
+</div>
+<div class="bottom">
+<p>No.Of.Customers : <%= x %></p>
+</div>
+<%- include("partials/footer")%>

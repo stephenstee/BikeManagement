@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+   <head>
+		<title>Bike Management</title>
+		<meta name="viewport" content="text" width="device-width" initial-scale="1.0">
+		<meta charset="UTF-8">
+		<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/semantic-ui@2.4.2/dist/semantic.min.css">
+<script src="https://cdn.jsdelivr.net/npm/semantic-ui@2.4.2/dist/semantic.min.js"></script>
+	<script src=""></script>
+	</head>
+	<body>
+	<div class="ui stackable menu">
+  <div class="item">
+    <h2 class="ui header">
+  <i class="bicycle icon"></i>
+  <div class="content">
+    Monkey Wheeler
+  </div>
+</h2>
+  </div>
+  <a class="item" href="/index">Home</a>
+  <a class="item" href="/index/about">About-us</a>
+		<!-- <a href="/user/" + req.params.id >profile</a> -->
+<div class="right menu">
+	<% if(!currentUser){ %>
+    <a class="item" href="/login">Login</a>
+    <a class="item" href="/register">Register</a>
+ <%	}else{ %>
+	<a class="item" href="#"><i class="user circle icon"></i> Signed In as  <%= currentUser.username%></a>
+    <a class="item" href="/logout">Logout</a>
+  <% } %>
+ </div>
+</div>
+<div class="ui container">
+	<% if(message && message.length > 0){%>
+	<div class="ui red message">
+	<h1><%= message %></h1>	
+	</div>
+	<% } %>
+	</div>
+		

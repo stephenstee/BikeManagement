@@ -1,0 +1,46 @@
+<style>
+	#spec{
+            border: 2px solid black;
+		    margin-top: 5px;
+	}
+	li{
+		list-style-type: none;
+		text-align:center;
+		font-size: 20px;
+	}
+
+</style>
+<%- include("partials/header")%>
+
+<div class="ui container">
+<% bikes.forEach(function(bike){ %>
+	    <hr>
+		<div >
+		<h2 class="ui header">Brand-<%= bike.brand %></h3>
+			<a href="/index/<%= bike._id%>/edit" class="ui button inverted red" >Edit</a>
+			<form action="/index/<%= bike._id%>/delete?_method=DELETE" method="POST" style="display:inline;">
+				<button type="submit" class="ui button inverted violet" >Delete</button>
+			</form>
+		<hr>
+	    </div>
+        <img src="<%= bike.image %>" class="ui fluid image">
+	    <div id="spec">
+	    <h2 class="ui header" style="text-align:center;">Specifications</h3>
+	    <hr>
+		<ul>
+        <li >Model: <%= bike.model  %></li>
+			
+        <li >Engine: <%= bike.Engine %></li>
+			
+        <li >Cost: <%= bike.cost %> </li>
+			
+        <li >Gear: <%= bike.gear %> </li>
+			
+        <li >Category: <%= bike.category %></li>
+		</ul>
+	</div>
+		
+ <% }) %>
+</div>
+
+<%- include("partials/footer") %>

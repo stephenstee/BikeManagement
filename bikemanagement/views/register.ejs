@@ -1,0 +1,36 @@
+<%- include("partials/header")%>
+
+<style>
+	body{
+	background: #ff4b1f;  /* fallback for old browsers */
+background: -webkit-linear-gradient(to right, #ff9068, #ff4b1f);  /* Chrome 10-25, Safari 5.1-6 */
+background: linear-gradient(to right, #ff9068, #ff4b1f); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+	}
+	#test{
+		border:2px solid black;
+		
+	}
+</style>
+
+	 <div class="ui  container">
+		 <h1 class="ui header" style="text-align:center">
+			 Register
+		 </h1>
+		 <hr>
+		 <div id="test">
+	<form class="ui form" action="/register" method="POST" style="width:50%;margin:50px auto;" >
+		<div class="field">
+			<label style="font-size:20px;">Username:</label>
+    <input placeholder="username" type="text" name=username>
+		</div>
+		<div class="field">
+			<label style="font-size:20px;">Password:</label>
+    <input placeholder="password" name="password" type="password">
+		</div>
+		<div class="field">
+    <button type="submit" class="ui blue large button">Register</button>
+	</form>
+		</div>
+		 </div>
+<%- include("partials/footer")%>

@@ -1,0 +1,31 @@
+<%- include("partials/header") %>
+<style>
+	form{
+		width:50%;
+		margin: 50px auto;
+		border: 2px solid red;
+		padding: 20px;
+		
+	}
+	h2{
+		text-align:center;
+	}
+</style>
+
+<div class="ui container">
+	<h2 class="ui header">Admin Login</h2>
+	<form action="/index/admin" method="POST" class="ui form">
+		<div class="field">
+			<label>Username</label>
+		<input type="text" name="username" >
+		</div>
+		<div class="field">
+			<label>Password</label>
+		<input type="password" name="password">
+		</div>
+		<button class="ui button inverted red big ">Submit</button>
+	</form>
+</div>
+
+
+<%- include("partials/footer") %>

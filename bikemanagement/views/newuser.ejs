@@ -1,0 +1,38 @@
+<%- include("partials/header")%>
+<div class="ui container">
+	<h1 class="ui header" style="text-transform:uppercase;">Fill the details</h1>
+<form action="/user" method="POST" class="ui form">
+	<div class="field">
+	<input type="text" placeholder="firstName" name="customer[fname]">
+	</div>
+	<div class="field">
+	<input type="text" placeholder="lastName" name="customer[lname]">
+	</div>
+		<div class="field">
+	<input type="text" placeholder="DOB" name="customer[dob]">
+	</div>
+	<div class="field">
+	<input type="text" placeholder="Phone Number" name="customer[phone]" >
+	</div>
+		<div class="field">
+ <input type="text" placeholder="Address" name="customer[address]">
+	</div>
+	<div style="font-size:15px; font-weight:normal;">
+		Select Your Favorite Motor Cycle Brand:
+	</div>
+	<select class="ui search dropdown" name="customer[favbike]">
+		<option value="KTM">KTM</option>
+		<option value="BAJAJ">BAJAJ</option>
+		<option value="TVS">TVS</option>
+		<option value="YAMAHA">YAMAHA</option>
+		<option value="HONDA">HONDA</option>
+	</select>
+	<div style="margin-top: 10px;">
+	<button class="ui button inverted green" type="submit">Submit</button>
+	<button class="ui button inverted red" type="reset">Reset</button>
+			</div>
+</form>
+</div>
+
+
+<%- include("partials/footer")%>

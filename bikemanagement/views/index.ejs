@@ -1,0 +1,77 @@
+<style>
+	#spec{
+            border: 2px solid black;
+		    margin-top: 5px;
+	}
+	ul li{
+		list-style-type: none;
+		text-align:center;
+		font-size: 20px;
+		line-height: 2;
+		text-decoration-line: underline;
+	}
+	#bottom {
+		 
+		margin-top: 10px;
+		background-color: black;
+		color: white;
+		line-height: 2;
+		text-decoration-line: underline;
+		text-decoration-color: white;
+	}
+	#header{
+		font-size: 40px;
+		font-weight:normal;
+	}
+
+</style>
+<%- include("partials/header")%>
+<div class="ui container">
+	<h2 style="font-size:30px;font-weight:normal; text-align:center;text-transform:uppercase;">Monkey Wheeler</h2>
+</div>
+<div class="ui fluid container">
+	<div class="five ui buttons">
+  <button class="ui button orange">KTM</button>
+  <button class="ui button teal">BAJAJ</button>
+  <button class="ui button blue">YAMAHA</button>
+  <button class="ui button violet">HONDA</button>
+  <button class="ui button black ">TVS</button>
+</div>
+</div>
+<div class="ui container">
+<% bikes.forEach(function(bike){ %>
+	    <hr>
+		<div >
+		<h2 class="ui header">Brand-<%= bike.brand %></h3>
+		<hr>
+	    </div>
+        <img src="<%= bike.image %>" class="ui fluid image">
+	    <div id="spec">
+	    <h2 class="ui header" style="text-align:center;">Specifications</h3>
+	    <hr>
+		<ul>
+        <li>Model: <%= bike.model  %></li>
+			
+        <li>Engine: <%= bike.Engine %></li>
+			
+        <li>Cost: <%= bike.cost %> </li>
+			
+        <li>Gear: <%= bike.gear %> </li>
+			
+        <li>Category: <%= bike.category %></li>
+		</ul>
+	</div>
+		
+ <% }) %>
+</div>
+<div id="bottom">
+<div class="ui fluid container">
+	<h1 id="header">Monkey Wheeler</h1>
+	<ul>
+		<li><p>Contact-Us: 999999999</p></li>
+		<li><a href="#" class=" ui circular facebook icon button"><i class="facebook icon"></i></a>Facebook</li>
+		<li><a href="#" class=" ui circular google plus icon button"><i class="google plus icon"></i></a>G-mail</li>
+		</ul>
+</div>
+</div>
+<%- include("partials/footer") %>

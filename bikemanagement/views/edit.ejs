@@ -1,0 +1,44 @@
+<style>
+	.container{
+		border: 2px solid black;
+		
+	}
+	form{
+		width:50%;
+		margin: 0 auto;
+		color:black;
+	}
+</style>
+<%- include("partials/header") %>
+
+<div class=" ui center aligned container ">
+	<h2>Edit Bikes</h2>
+	<form action="/index/<%=bike._id%>?_method=PUT"  method="POST"  class="ui form">
+		<div class="field">
+		 <input type="text" name="bike[brand]" value = "<%= bike.brand%>">	
+		</div>
+		<div class="field">
+		 <input type="text" name="bike[image]" value="<%= bike.image %>">	
+		</div>
+		<div class="field">
+		 <input type="text" name="bike[model]" value="<%= bike.model %>">	
+		</div>
+		<div class="field">
+		 <input type="text" name="bike[Engine]" value="<%= bike.Engine%>">	
+		</div>
+		<div class="field">
+		 <input type="text" name="bike[cost]" value="<%= bike.cost%>">	
+		</div>
+		<div class="field">
+		 <input type="text" name="bike[gear]" value="<%= bike.gear %>">	
+		</div>
+		<div class="field">
+		 <input type="text" name="bike[category]" value="<%= bike.category %>">	
+		</div>
+		<button type="submit" class="ui button big ">Submit</button>
+		<button type="reset" class="ui button red big ">Reset</button>
+		
+	</form>
+</div>
+
+<%- include("partials/footer") %>
